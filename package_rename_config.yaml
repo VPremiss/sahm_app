@@ -1,0 +1,26 @@
+package_rename_config:
+  android:
+    app_name: سهم
+    package_name: dev.vpremiss.sahm_app
+    override_old_package: dev.goodm4ven.sahm_app
+    lang: kotlin
+  ios:
+    app_name: سهم
+    bundle_name: sahm_app
+    package_name: dev.vpremiss.sahm_app
+  web:
+    app_name: سهم
+    description: A paired-name generator app.
+  linux:
+    app_name: سهم
+    package_name: dev.vpremiss.sahm_app
+    exe_name: sahm_app-linux-x64
+  windows:
+    app_name: سهم
+    organization: VPremiss
+    copyright_notice: Copyright ©️ 2024 VPremiss. All rights reserved.
+    exe_name: sahm_app-win32
+  macos:
+    app_name: سهم
+    package_name: dev.vpremiss.sahm_app
+    copyright_notice: Copyright ©️ 2024 VPremiss. All rights reserved.

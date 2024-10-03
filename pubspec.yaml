@@ -1,0 +1,53 @@
+name: sahm_app
+description: "تطبيق لسنة الاستهام والقرعة ."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_svg: ^2.0.10+1
+  shimmer: ^3.0.0
+  diagonal_decoration: ^1.0.2+3
+  modal_bottom_sheet: ^3.0.0
+  url_launcher: ^6.3.0
+  flutter_animate: ^4.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  package_rename: ^1.7.1
+  icons_launcher: ^3.0.0
+  flutter_native_splash: ^2.4.1
+
+flutter:
+  # uses-material-design: true
+  fonts:
+    - family: ReadexPro
+      fonts:
+        - asset: assets/fonts/ReadexPro/ReadexPro-Bold.ttf
+        - asset: assets/fonts/ReadexPro/ReadexPro-ExtraLight.ttf
+        - asset: assets/fonts/ReadexPro/ReadexPro-Light.ttf
+        - asset: assets/fonts/ReadexPro/ReadexPro-Medium.ttf
+        - asset: assets/fonts/ReadexPro/ReadexPro-Regular.ttf
+        - asset: assets/fonts/ReadexPro/ReadexPro-SemiBold.ttf
+    - family: IBMPlexSansArabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-Bold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-Light.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-Medium.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-Regular.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic/IBMPlexSansArabic-Thin.ttf
+  assets:
+    - assets/svgs/arrow-downward.svg
