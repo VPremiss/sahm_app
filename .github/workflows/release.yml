@@ -1,4 +1,4 @@
-name: Release
+name: CI and Release
 
 on:
   pull_request:
@@ -8,53 +8,41 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
+  checks:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          echo "Running CI checks for the pull request..."
+          # The soon test here!
+
   release:
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install GitHub CLI
-        run: |
-          echo "Installing GitHub CLI..."
-          sudo apt-get install -y gh
-          echo "GitHub CLI installed successfully."
-
       - name: Extract current version from pubspec.yaml
         id: extract_version
         run: |
-          echo "Extracting current version from pubspec.yaml..."
           current_version=$(grep '^version: ' pubspec.yaml | awk '{print $2}' | sed 's/+.*//')
-          echo "Current version extracted: $current_version"
           echo "current_version=$current_version" >> $GITHUB_ENV
 
       - name: Get latest release version from GitHub
         id: get_latest_release
         run: |
-          echo "Fetching latest release version from GitHub..."
           latest_version=$(gh release view --json tagName -q .tagName | sed 's/^v//')
-          echo "Latest release version fetched: $latest_version"
           echo "latest_version=$latest_version" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check version difference
-        if: env.current_version == env.latest_version
-        run: |
-          echo "Checking version difference..."
-          if [ "$current_version" == "$latest_version" ]; then
-            echo "No version change detected. Exiting."
-            exit 0
-          else
-            echo "Version change detected. Proceeding with release."
-          fi
 
       - name: Draft Release with Release Drafter
         uses: release-drafter/release-drafter@v6
         with:
           version: ${{ env.current_version }}
+          target_commitish: 'main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
