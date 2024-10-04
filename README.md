@@ -6,7 +6,7 @@
 
 # تطبيق سهم
 
-تطبيق [Flutter](https://flutter.dev) بسيط لتسهييل وإحياء سنة "[الاستهام](https://islamic-content.com/dictionary/word/11455/ar)" والقرعة بين الناس إن شاء الله .
+تطبيق [Flutter](https://flutter.dev) بسيط لتسهيل وإحياء سنة "[الاستهام](https://islamic-content.com/dictionary/word/11455/ar)" والقرعة بين الناس إن شاء الله .
 
 <img src="./.github/images/screenshot-android.png" alt="Android Screenshot" width="350"/>
 <video src="https://github.com/user-attachments/assets/67692a2d-23a5-4eea-8498-f997e334b15e" alt="Linux Recording" width="800"></video>
